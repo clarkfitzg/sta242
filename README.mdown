@@ -1,0 +1,27 @@
+## Real time BART data analysis
+
+Use XML provided by API
+
+Station latitude and longitude:
+http://api.bart.gov/docs/stn/stns.aspx
+
+Estimated time of departure in minutes for each station:
+http://api.bart.gov/docs/etd/
+
+## Interesting links
+
+- Javascript for visualizing Tokyo subways
+  http://jsbin.com/gist/f64e811fc3311414e083?js,output
+
+- Boston subway analysis (very nice) http://mbtaviz.github.io/
+
+- Real time BART locations http://whereisbart.com/
+
+- Easy to use graph creator http://bl.ocks.org/cjrd/6863459
+
+- Memory transit map
+  https://medium.com/@beefoo/building-a-memory-transit-map-82c2a05e456e
+
+- D3 tutorial http://alignedleft.com/tutorials/d3
+
+- Animated SVG with R http://blog.grimwisdom.com/r/generating-svg-with-r
