@@ -1,36 +1,48 @@
-Mon Apr 13 15:08:50 PDT 2015
+# EDA and visualization using Python
 
-Meeting with Zhewen - Stats 242 project
+## Stats 242 Project Proposal
 
-High level goals:
-- Beautiful and more importantly, meaningful
-- Easy to use (unlike ggplot2)
-- Immediately useful
-- Miscellaneous stats that I use regularly
+Zhewen Hu and Clark Fitzgerald
 
-Libraries to build from:
-- Matplotlib
-- Bokeh
-- Seaborn
-- statsmodels
+In this project we plan to write a Python module centered primarily around
+data visualization. The focus will be on understanding and explaining
+statistical concepts as well as exploratory data analysis.
 
-Themes:
-exploratory data analysis
-data visualization
-stats education
-interactive
+We have several high level objectives. First we would like to craft
+a quality piece of software that can be shown to potential employers.
+Second we'd like to build tools that simplify and accelerate common types
+of statistical data visualization. This would be personally useful to us.
 
-Other ideas:
-Ipython notebook - interactive stuff
-- select distribution and parameters from menu (like Wolfgang's projects)
+Ideally this project would contribute functionality that is missing from the Python data
+analysis ecosystem. Python has several full featured visualization
+libraries including matplotlib, Seaborn, and bokeh. We have no intention of
+duplicating what's already been done. The goal is rather to use these as
+base platforms, and extend them to have more statistical capabilities.
+Hence this project will be more specialized than the general purpose
+libraries.
+If we are successful, and the code is general enough to have broad
+application
+then we will consider submitting patches to these projects.
 
-Plots:
-- Many things with statistical distributions
-- statistical distributions on top of data distributions
-- Boxplots by section on top of scatter plot
-- Diagnostic plots for linear models (Might mean porting from R)
-    Check what exists in statsmodels already
-- Maps for count data with colors for frequency (matplotlib has builtin
-  map capability)
-- chloropleth map
-- heatmap
+## Areas of concentration
+
+There are several aspects of this project where we may delve more deeply.
+
+- EDA : What are the fastest and most informative plots for exploratory
+  data analysis? How do we quickly learn if the necessary assumptions for
+statistical modeling hold? For example, by binning and plotting boxplots along
+with a scatterplot one can better judge the linear model assumption of
+equal variance.
+
+- Interactivity : Create html widgets / apps which require no technical
+  skills to use. An example would be a tool that allows a user to vary the
+  parameters of the Beta distribution and then plots the resulting shape.
+
+- Maps : Statistical visualizations on maps offer rich opportunity as well
+  as challenge.
+
+## Learning objectives
+
+There are two aspects of data visualization: knowing what to plot, and
+knowing how to do it. In this project we hope to increase our skills and
+experience in both aspects.
