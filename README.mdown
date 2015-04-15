@@ -11,7 +11,7 @@ statistical concepts as well as exploratory data analysis.
 We have several high level objectives. First we would like to craft
 a quality piece of software that can be shown to potential employers.
 Second we'd like to build tools that simplify and accelerate common types
-of statistical data visualization. This would be personally useful to us and statistics learners. 
+of statistical data visualization. This would be personally useful to us.
 
 Ideally this project would contribute functionality that is missing from the Python data
 analysis ecosystem. Python has several full featured visualization
@@ -29,20 +29,20 @@ then we will consider submitting patches to these projects.
 There are several aspects of this project where we may delve more deeply.
 
 - EDA : What are the fastest and most informative plots for exploratory
-  data analysis? How can we quickly learn if the necessary assumptions for
+  data analysis? How do we quickly learn if the necessary assumptions for
 statistical modeling hold? For example, by binning and plotting boxplots along
 with a scatterplot one can better judge the linear model assumption of
-equal variance. 
+equal variance.
 
 - Interactivity : Create html widgets / apps which require no technical
   skills to use. An example would be a tool that allows a user to vary the
-  parameters of the Beta distribution and then plots the resulting shape. 
+  parameters of the Beta distribution and then plots the resulting shape.
 
 - Maps : Statistical visualizations on maps offer rich opportunity as well
-  as challenge. For example, one can easily draw the Leaflet map or Choropleth map. 
+  as challenge.
 
 ## Learning objectives
 
 There are two aspects of data visualization: knowing what to plot, and
-knowing how to do it. In this project we hope to enhance our skills and
-experience in both aspects. 
+knowing how to do it. In this project we hope to increase our skills and
+experience in both aspects.
