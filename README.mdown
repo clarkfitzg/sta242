@@ -1,20 +1,29 @@
-# EDA and visualization using Python
+# EDA and visualization of large data sets using Python
 
 ## Stats 242 Project Proposal
 
 Zhewen Hu and Clark Fitzgerald
 (3rd group member dropped the class)
 
-Visualizing large data sets can be difficult because of overplotting and
-run time. When the number of points reaches an order of
-magnitude around n = 10,000 this becomes a serious issue, although
-it can be problematic much earlier as well.
+The primary focus of this project will be on data sets containing between ten thousand and 100 million
+data points. This is too big for most conventional EDA plots, and yet it
+still can fit easily in memory.
 
 The Bokeh project is actively developing this set of capabilities within
 Python. Downsampling in particular is under active development.
 
-In this project we plan to write a Python module centered primarily around
-visualization of data sets where n is large.
+In this project we plan to write a Python application to visualize large
+data sets using Bokeh.
+
+With downsampling we can use fewer data points to achieve the same effect as a
+plot with more data.
+
+Can we do downsampling using Bokeh on a local machine?
+How well does this downsampling work?
+How well does Bokeh scale with the number of points?
+
+Test application - sample n points from any statistical distribution.
+
 The focus will be on enabling rapid exploratory data analysis.
 More precisely, when given a data set on a local laptop where n > 10,000, 
 we'd like to create plots
