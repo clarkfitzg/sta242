@@ -6,12 +6,12 @@ Zhewen Hu and Clark Fitzgerald
 (3rd group member dropped the class)
 
 This project will focus on visualizing data sets containing between 10 thousand and 100 million
-data points. This is too many points for most conventional EDA plots, and yet it
+data points. It is too many points for most conventional EDA plots, and yet it
 still can fit easily in memory.
 
 The Bokeh project is actively developing this set of capabilities within
 Python. Downsampling in particular is under active development.
-downsampling we can use fewer data points to achieve the same effect as a
+By downsampling we can use fewer data points to achieve the same effect as a
 plot with more data.
 
 Can we do downsampling using Bokeh on a local machine?
@@ -22,7 +22,7 @@ Test application - sample n points from any statistical distribution.
 
 The focus will be on enabling rapid exploratory data analysis.
 More precisely, when given a data set on a local laptop where n > 10,000, 
-we'd like to create plots
+we'd like to create plots.
 
 Specfics: 
 
