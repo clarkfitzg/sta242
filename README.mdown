@@ -7,69 +7,32 @@ Zhewen Hu and Clark Fitzgerald
 
 This project will focus on visualizing data sets containing between 10 thousand and 100 million
 data points. It is too many points for most conventional EDA plots, and yet it
-still can fit easily in memory.
+still can fit easily in memory. There are two main challenges with data
+sets of this size- the time needed to plot, and overplotting.
 
 The Bokeh project is actively developing this set of capabilities within
 Python. Downsampling in particular is under active development.
 By downsampling we can use fewer data points to achieve the same effect as a
-plot with more data.
+plot with more data. We will determine if this works on a local machine as
+well as on a server.
 
-Can we do downsampling using Bokeh on a local machine?
-How well does this downsampling work?
-How well does Bokeh scale with the number of points?
+In this project we plan to push the limits of what Bokeh can do.
+We'll start with some statistical simulations of data up to the limits of
+memory.
+For a more advanced application we will examine climate data collected by 
+[NASA](http://disc.sci.gsfc.nasa.gov/daac-bin/DataHoldingsPDISC.pl?LOOKUPID_List=GPM_1AGMI). 
+This data consists of several GB of data collected daily and stored in HDF5
+format. It's made publicly available through an FTP server.
 
-Test application - sample n points from any statistical distribution.
-
-The focus will be on enabling rapid exploratory data analysis.
+The focus will be on rapid exploratory data analysis at scale.
 More precisely, when given a data set on a local laptop where n > 10,000, 
-we'd like to create plots.
-
-Specfics: 
-
-- Total time to create plot is < 1 second. This should hold constant as n
-  grows.
-- Methods to run on data loaded in memory (Numpy Arrays)
-- Methods to run on data in disk, especially HDF5.
-- Testing will be done primarily on simulated data.
-
-
-We plan
-
-We have several high level objectives. First we would like to craft
-a quality piece of software that can be shown to potential employers.
-Second we'd like to build tools that simplify and accelerate common types
-of statistical data visualization. This would be personally useful to us and statistics learners. 
-
-Ideally this project would contribute functionality that is missing from the Python data
-analysis ecosystem. Python has several full featured visualization
-libraries including Matplotlib, Seaborn, and Bokeh. We have no intention of
-duplicating what's already been done. The goal is rather to use these as
-base platforms, and extend them to have more statistical capabilities.
-Hence this project will be more specialized than the general purpose
-libraries.
-If we are successful, and the code is general enough to have broad
-application
-then we will consider submitting patches to these projects.
-
-## Areas of concentration
-
-There are several aspects of this project where we may delve more deeply.
-
-- EDA : What are the fastest and most informative plots for exploratory
-  data analysis? How can we quickly learn if the necessary assumptions for
-statistical modeling hold? For example, by binning and plotting boxplots along
-with a scatterplot one can better judge the linear model assumption of
-equal variance. 
-
-- Interactivity : Create html widgets / apps which require no technical
-  skills to use. An example would be a tool that allows a user to vary the
-  parameters of the Beta distribution and then plots the resulting shape. 
-
-- Maps : Statistical visualizations on maps offer rich opportunity as well
-  as challenge. For example, one can easily draw the Leaflet map or Choropleth map. 
+we'd like to create informative plots.
+If we're feeling really ambitious we'll try to create an application that
+uses the climate data to plot and animate maps.
 
 ## Learning objectives
 
 There are two aspects of data visualization: knowing what to plot, and
 knowing how to do it. In this project we hope to enhance our skills and
-experience in both aspects. 
+experience in both aspects. The technologies we'll be working with are
+Python, Bokeh, XML, and HDF5.
