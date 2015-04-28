@@ -1,8 +1,9 @@
-# EDA and visualization of large data sets using Python
+# Stats 242 Revised Project Proposal
 
-## Stats 242 Project Proposal
+## EDA and visualization of large data sets using Python
 
 Zhewen Hu and Clark Fitzgerald
+
 (3rd group member dropped the class)
 
 This project will focus on visualizing data sets containing between 10 thousand and 100 million
