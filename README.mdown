@@ -7,7 +7,7 @@ Zhewen Hu and Clark Fitzgerald
 (3rd group member dropped the class)
 
 This project will focus on visualizing data sets containing between 10 thousand and 100 million
-data points. It is too many points for most conventional EDA plots, and yet it
+data points. It is too many data points for most conventional EDA plots, and yet it
 still can fit easily in memory. There are two main challenges with data
 sets of this size- the time needed to plot, and overplotting.
 
@@ -20,20 +20,20 @@ well as on a server.
 In this project we plan to push the limits of what Bokeh can do.
 We'll start with some statistical simulations of data up to the limits of
 memory.
-For a more advanced application we will examine climate data collected by 
+For a more advanced application we will examine real data such as climate data collected by 
 [NASA](http://disc.sci.gsfc.nasa.gov/daac-bin/DataHoldingsPDISC.pl?LOOKUPID_List=GPM_1AGMI). 
 This data consists of several GB of data collected daily and stored in HDF5
 format. It's made publicly available through an FTP server.
 
 The focus will be on rapid exploratory data analysis at scale.
-More precisely, when given a data set on a local laptop where n > 10,000, 
+More precisely, when given a data set on a local laptop where data points are larger than 10,000, 
 we'd like to create informative plots.
 If we're feeling really ambitious we'll try to create an application that
 uses the climate data to plot and animate maps.
 
 ## Learning objectives
 
-There are two aspects of data visualization: knowing what to plot, and
+There are two main aspects of data visualization: knowing what to plot, and
 knowing how to do it. In this project we hope to enhance our skills and
 experience in both aspects. The technologies we'll be working with are
 Python, Bokeh, XML, and HDF5.
