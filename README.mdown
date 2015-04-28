@@ -1,6 +1,6 @@
 # Stats 242 Revised Project Proposal
 
-## EDA and visualization of large data sets using Python
+## EDA and visualization of medium data sets using Python
 
 Zhewen Hu and Clark Fitzgerald
 
@@ -8,7 +8,8 @@ Zhewen Hu and Clark Fitzgerald
 
 This project will focus on visualizing data sets containing between 10 thousand and 100 million
 data points. It is too many data points for most conventional EDA plots, and yet it
-still can fit easily in memory. There are two main challenges with data
+still fits easily in memory. 
+There are two main challenges with data
 sets of this size- the time needed to plot, and overplotting.
 
 The Bokeh project is actively developing this set of capabilities within
@@ -26,10 +27,15 @@ This data consists of several GB of data collected daily and stored in HDF5
 format. It's made publicly available through an FTP server.
 
 The focus will be on rapid exploratory data analysis at scale.
-More precisely, when given a data set on a local laptop where data points are larger than 10,000, 
-we'd like to create informative plots.
-If we're feeling really ambitious we'll try to create an application that
-uses the climate data to plot and animate maps.
+More precisely, when given an in memory data set with more than 10,000 data points
+we'd like to create informative plots using just a laptop in under 2
+seconds.
+
+As time allows, we will pursue the following more ambitious tasks:
+
+- Plotting maps using the climate data
+- Animation and Interactivity on the climate data
+- Rapid visualization of data on disk
 
 ## Learning objectives
 
