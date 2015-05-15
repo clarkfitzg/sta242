@@ -1,3 +1,17 @@
+Fri May 15 09:41:13 PDT 2015
+Clark
+
+Pytables seems to be easier than Pandas to explore the HDF5 structure, at
+least for starting out. Helpful guide:
+http://www.pytables.org/usersguide/tutorials.html#readingandselectingusage
+
+Next steps: find a schema or some metadata for this data set
+http://disc.sci.gsfc.nasa.gov/daac-bin/DataHoldingsPDISC.pl?LOOKUPID_List=GPM_1AGMI
+
+What I really want to quickly find out is: what is the tree structure of this
+dataset, and where are all the nonempty arrays? Could graph this.
+
+
 Mon Apr 13 15:08:50 PDT 2015
 
 # EDA and visualization using Python
@@ -39,3 +53,6 @@ Plots:
   map capability)
 - chloropleth map
 - heatmap
+
+
+
