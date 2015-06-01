@@ -25,4 +25,4 @@ sun = w.root.S1.sunData
 # 32 correstponds to Float32Atom?
 [x.chunkshape for x in sun]
 
-w.root
+w.root.S1.Latitude

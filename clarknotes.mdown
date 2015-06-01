@@ -1,3 +1,35 @@
+Sat May 16 09:33:55 PDT 2015
+Clark
+
+TODO - Understand how to make good timings.
+
+Revisited project description- looks like we could start with some
+benchmarking for how long it takes to visualize big data sets. 
+Need a computationally expensive visualization task. One is plotting n
+points using an appropriate level of transparency (alpha). Then could save
+it in a pixelated format like PNG so the resulting output file is not huge.
+
+Goal: produce some benchmarks to compare performance.
+Make it nice and repeatable using `make`.
+
+This could actually be an appealing read or blog post. Catalog the common
+techniques for visualizing large data sets and benchmark the
+performance of popular R and Python libraries for these.
+
+
+Here's a place to go for more of these HDF5 files:
+http://gpm1.gesdisc.eosdis.nasa.gov/opendap/GPM_L1A/GPM_1AGMI.03/2015/136/contents.html
+
+Using HDFView to see what's inside the file. 
+http://www.hdfgroup.org/products/java/release/download.html
+Still don't know schema - how they're all related.
+
+So often I get data where I have no idea what it is or where it came from.
+I usually end up calling UNIX commands like `file` and `wc` to get some
+idea of what it is.
+Thinking of a program that does several of these things together and then
+visualizes the result- call it `triage`.
+
 Fri May 15 09:41:13 PDT 2015
 Clark
 
