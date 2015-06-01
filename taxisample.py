@@ -63,4 +63,5 @@ def main(size_MB, taxidir, outfile):
 
 if __name__ == '__main__':
 
+    np.random.seed(242)
     main(size_MB=200, taxidir='data', outfile='data/taxi.csv')
