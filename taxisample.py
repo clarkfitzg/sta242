@@ -42,11 +42,11 @@ def samplerows(dframe, size_MB, replace=False):
     return dframe.loc[rows]
 
  
-def main(size_MB, datadir):
+def main(size_MB, taxidir, outfile):
 
     # Change this line to sample from other files
     filenames = ['trip_data_1.csv', 'trip_fare_1.csv']
-    filenames = [os.sep.join((datadir, x)) for x in filenames]
+    filenames = [os.sep.join((taxidir, x)) for x in filenames]
 
     # Join the two dataframes
     taxi = pd.concat([pd.read_csv(x) for x in filenames], axis=1)
@@ -58,12 +58,9 @@ def main(size_MB, datadir):
 
     taxisample = samplerows(taxi, size_MB)
 
-    taxisample.to_csv('taxi.csv', index=False)
+    taxisample.to_csv(outfile, index=False)
 
 
 if __name__ == '__main__':
 
-    datadir = '/home/data/NYCTaxis'
-    datadir = '/Users/clark/projects/taxi/python/data'
-
-    main(size_MB=500, datadir=datadir)
+    main(size_MB=200, taxidir='data', outfile='data/taxi.csv')
