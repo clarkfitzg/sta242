@@ -63,7 +63,7 @@ def main(size_MB, datadir):
 
 if __name__ == '__main__':
 
-    datadir = '/home/data/NYCTaxis/'
+    datadir = '/home/data/NYCTaxis'
     datadir = '/Users/clark/projects/taxi/python/data'
 
     main(size_MB=500, datadir=datadir)
