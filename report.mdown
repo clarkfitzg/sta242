@@ -1,0 +1,41 @@
+# Stats 242 Project
+
+## EDA and visualization of medium data sets
+
+Zhewen Hu and Clark Fitzgerald
+
+We visualize a sample of the taxi data set.
+
+## Medium data EDA visualization shootout
+
+Contenders: 
+
+1. R - Good old vanilla R
+2. ggplot2 - popular R library
+2. Matplotlib - established Python plotting library
+2. Bokeh - newer Python library
+
+Evaluation criteria:
+
+- __Speed__ The primary focus. How long to make a single plot?
+- __Aesthetics__ Do the defaults look reasonable or are additional tweaks
+  needed?
+- __Code Readability__ How expressive is the code? Extensibility?
+  maintainability? Learning curve?
+
+Timings - All plots should be created on one machine 
+(one of the dept servers) at a time when it's not loaded. Need to make
+multiple timings. Timings should only measure time to create and save the
+plot, not anything else like subsetting or transformations.
+
+Save timing data to a CSV file:
+
+program     task        time(seconds)
+-------     ----        ----
+R           histogram   3.61
+...
+
+
+Task 1: __Histogram__ of one variable
+
+Task 2: __Alpha shading__ scatter plot of two variables
