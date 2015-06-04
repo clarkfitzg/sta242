@@ -4,7 +4,7 @@
 
 Zhewen Hu and Clark Fitzgerald
 
-We visualize a sample of the taxi data set.
+We visualize a sample of the NYC taxi data set.
 
 ## Medium data EDA visualization shootout
 
@@ -12,8 +12,9 @@ Contenders:
 
 1. R - Good old vanilla R
 2. ggplot2 - popular R library
-2. Matplotlib - established Python plotting library
-2. Bokeh - newer Python library
+3. htmlwidgets - A line or two of R code is all it takes to produce a D3 graphic or Leaflet map
+4. Matplotlib - established Python plotting library
+5. Bokeh - newer Python library
 
 Evaluation criteria:
 
@@ -22,26 +23,23 @@ Evaluation criteria:
   needed?
 - __Code Readability__ How expressive is the code? Extensibility?
   maintainability? Learning curve?
+-__Presentation of the outputs__It is easy to show the output in different platforms?
 
 Timings - All plots should be created on one machine 
 (one of the dept servers) at a time when it's not loaded. Need to make
-multiple timings. 
+multiple timings. Timings should only measure time to create and save the
+plot, not pre-process data like subsetting or transformations.
 
 Save timing data to a CSV file:
 
-time(seconds)   plot        program        
-----            -------     ----        
-3.61            histogram   R
+program     task        time(seconds)
+-------     ----        ----
+R           histogram   3.61
 ...
 
 
-### Task 1: Histogram
+Task 1: __Histogram__ of one variable
 
-Plot a histogram of the single variable `total_amount` for values of 
-`total_amount` less than 100. Save the result to `histogram.pdf`.
+Task 2: __Alpha shading__ scatter plot of two variables
 
-### Task 2: Alpha shading 
 
-Scatter plot of two variables where the points are semi transparent. This
-shows the distribution of many points without completely overplotting.
-Save the result to `alpha.png`.
