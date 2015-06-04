@@ -25,17 +25,23 @@ Evaluation criteria:
 
 Timings - All plots should be created on one machine 
 (one of the dept servers) at a time when it's not loaded. Need to make
-multiple timings. Timings should only measure time to create and save the
-plot, not anything else like subsetting or transformations.
+multiple timings. 
 
 Save timing data to a CSV file:
 
-program     task        time(seconds)
--------     ----        ----
-R           histogram   3.61
+time(seconds)   plot        program        
+----            -------     ----        
+3.61            histogram   R
 ...
 
 
-Task 1: __Histogram__ of one variable
+### Task 1: Histogram
 
-Task 2: __Alpha shading__ scatter plot of two variables
+Plot a histogram of the single variable `total_amount` for values of 
+`total_amount` less than 100. Save the result to `histogram.pdf`.
+
+### Task 2: Alpha shading 
+
+Scatter plot of two variables where the points are semi transparent. This
+shows the distribution of many points without completely overplotting.
+Save the result to `alpha.png`.

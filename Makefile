@@ -12,3 +12,6 @@ proposal.pdf: README.mdown
 
 view: $(REPORT).pdf
 	open $<
+
+times.csv: histogram.py
+	python histogram.py > times.csv
