@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h1 id="stats-242-project">Stats 242 Project</h1>
+<h2 id="eda-and-visualization-of-medium-data-sets">EDA and visualization of medium data sets</h2>
+<p>Zhewen Hu and Clark Fitzgerald</p>
+<p>We visualize a sample of the NYC taxi data set.</p>
+<h2 id="medium-data-eda-visualization-shootout">Medium data EDA visualization shootout</h2>
+<p>Contenders:</p>
+<ol style="list-style-type: decimal">
+<li>R - Good old vanilla R</li>
+<li>ggplot2 - popular R library</li>
+<li>htmlwidgets - A line or two of R code is all it takes to produce a D3 graphic or Leaflet map</li>
+<li>Matplotlib - established Python plotting library</li>
+<li>Bokeh - newer Python library</li>
+</ol>
+<p>Evaluation criteria:</p>
+<ul>
+<li><strong>Speed</strong> The primary focus. How long to make a single plot?</li>
+<li><strong>Aesthetics</strong> Do the defaults look reasonable or are additional tweaks needed?</li>
+<li><strong>Code Readability</strong> How expressive is the code? Extensibility? maintainability? Learning curve? -__Presentation of the outputs__It is easy to show the output in different platforms?</li>
+</ul>
+<p>Timings - All plots should be created on one machine (one of the dept servers) at a time when it's not loaded. Need to make multiple timings.</p>
+<p>Save timing data to a CSV file:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">program</th>
+<th align="left">task</th>
+<th align="left">time(seconds)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">R</td>
+<td align="left">histogram</td>
+<td align="left">3.61</td>
+</tr>
+<tr class="even">
+<td align="left">...</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="task-1-histogram">Task 1: Histogram</h3>
+<p>Plot a histogram of the single variable <code>total_amount</code> for values of <code>total_amount</code> less than 100. Save the result to <code>histogram.png</code>.</p>
+<div class="figure">
+<img src="matplotlib/histogram.png" alt="The defaults are not so wonderful" />
+<p class="caption">The defaults are not so wonderful</p>
+</div>
+<h3 id="task-2-alpha-shading">Task 2: Alpha shading</h3>
+<p>Scatter plot of two variables: trip time in minutes and <code>total_amount</code> where the points are semi transparent. This shows the distribution of many points without completely overplotting.</p>
+<p>Convert <code>trip_time_in_seconds</code> to minutes by dividing by 60.</p>
+<ol style="list-style-type: decimal">
+<li>Save the result to <code>alpha.png</code>.</li>
+<li>Filter for rides less than 1 hour and total amount less than 100. Save the result to <code>alpha2.png</code>.</li>
+</ol>
+<div class="figure">
+<img src="matplotlib/alpha.png" alt="Matplotlib" />
+<p class="caption">Matplotlib</p>
+</div>
+<div class="figure">
+<img src="matplotlib/alpha2.png" alt="Matplotlib" />
+<p class="caption">Matplotlib</p>
+</div>
+<h3 id="task-3-sampling">Task 3: Sampling</h3>
+<p>Perform the same scatter plot as the alpha shading, but instead of plotting all points choose a random sample without replacement of 300 points. Save result to <code>sample.png</code>.</p>
+<div class="figure">
+<img src="matplotlib/sample.png" alt="Matplotlib" />
+<p class="caption">Matplotlib</p>
+</div>
+<h3 id="task-4-boxplots">Task 4: Boxplots</h3>
+<p>Boxplots of <code>total_amount</code> grouped by <code>payment_type</code> where <code>total_amount</code> is less than 100. Save result to <code>boxplot.png</code>.</p>
+<div class="figure">
+<img src="matplotlib/boxplot.png" alt="Matplotlib" />
+<p class="caption">Matplotlib</p>
+</div>
+</body>
+</html>

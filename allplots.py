@@ -1,8 +1,10 @@
 '''
 Makes all the plots and does the timings
+Pass in number of repetitions as a command line argument
 '''
 
 import os
+import sys
 from time import time
 from functools import partial
 
@@ -19,6 +21,12 @@ def timer(plotfunc):
     '''
     Print out timing data for plotfunc
     '''
+
+    # Clear plotting figure from previous plot
+    plt.clf()
+
+    # Sets default figure size
+    plt.figure(figsize=(4, 4))
 
     # Time the function call
     start = time()
@@ -62,6 +70,17 @@ def plot_boxplot():
     plt.savefig('boxplot.png')
 
 
+def plot_alpha():
+    alpha = 0.06
+    x = taxi['trip_time_in_secs'] / 60
+    y = taxi['total_amount']
+    plt.scatter(x, y, alpha=alpha)
+    plt.xlabel('trip time in minutes')
+    plt.ylabel('total fare amount in dollars')
+    plt.tight_layout()
+    plt.savefig('alpha.png')
+
+
 def plot_alpha2():
     alpha = 0.02
     x = taxi['trip_time_in_secs'] / 60
@@ -78,26 +97,23 @@ def plot_alpha2():
     plt.savefig('alpha2.png')
 
 
-def plot_alpha():
-    alpha = 0.06
-    x = taxi['trip_time_in_secs'] / 60
-    y = taxi['total_amount']
-    plt.scatter(x, y, alpha=alpha)
-    plt.xlabel('trip time in minutes')
-    plt.ylabel('total fare amount in dollars')
-    plt.tight_layout()
-    plt.savefig('alpha.png')
-
-
 if __name__ == '__main__':
 
-    #plt.style.use('ggplot')
+    # Save all plots in this directory
+    os.chdir('matplotlib')
 
-    # Sets default figure size
-    plt.figure(figsize=(4, 4))
+    #plt.style.use('ggplot')
 
     g = globals()
     plotfuncs = [g[key] for key in g if key.startswith('plot_')]
 
-    for f in plotfuncs:
-        timer(f)
+    #import pdb; pdb.set_trace()
+    # Pass in number of repetitions as a command line argument
+    try:
+        nreps = int(sys.argv[1])
+    except IndexError:
+        nreps = 1
+
+    for i in range(nreps):
+        for f in plotfuncs:
+            timer(f)
