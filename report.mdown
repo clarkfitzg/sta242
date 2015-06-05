@@ -40,15 +40,38 @@ R           histogram   3.61
 ### Task 1: Histogram
 
 Plot a histogram of the single variable `total_amount` for values of 
-`total_amount` less than 100. Save the result to `histogram.pdf`.
+`total_amount` less than 100. Save the result to `histogram.png`.
 
-![This is Matplotlib's histogram](matplotlib/histogram.pdf)
+![The defaults are not so wonderful](matplotlib/histogram.png)
 
 ### Task 2: Alpha shading 
 
-Scatter plot of two variables `trip_time_in_secs` and `total_amount`
+Scatter plot of two variables: trip time in minutes and `total_amount`
 where the points are semi transparent. 
 This shows the distribution of many points without completely overplotting.
-Save the result to `alpha.png`.
 
+Convert `trip_time_in_seconds` to minutes by dividing by 60.
 
+1. Save the result to `alpha.png`.
+2. Filter for rides less than 1 hour and total amount less than 100. 
+    Save the result to `alpha2.png`.
+
+![Matplotlib](matplotlib/alpha.png)
+
+![Matplotlib](matplotlib/alpha2.png)
+
+### Task 3: Sampling
+
+Perform the same scatter plot as the alpha shading, but instead of plotting
+all points choose a random sample without replacement of 300 points.
+Save result to `sample.png`.
+
+![Matplotlib](matplotlib/sample.png)
+
+### Task 4: Boxplots
+
+Boxplots of `total_amount` grouped by `payment_type` where `total_amount`
+is less than 100.
+Save result to `boxplot.png`.
+
+![Matplotlib](matplotlib/boxplot.png)
