@@ -27,4 +27,4 @@ filename = os.sep.join((os.pardir, 'data', 'taxi.csv'))
 
 taxi = pd.read_csv(filename)
 
-plt.style.use('ggplot')
+#plt.style.use('ggplot')

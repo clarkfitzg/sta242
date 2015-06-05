@@ -46,6 +46,9 @@ Plot a histogram of the single variable `total_amount` for values of
 
 ### Task 2: Alpha shading 
 
-Scatter plot of two variables where the points are semi transparent. This
-shows the distribution of many points without completely overplotting.
+Scatter plot of two variables `trip_time_in_secs` and `total_amount`
+where the points are semi transparent. 
+This shows the distribution of many points without completely overplotting.
 Save the result to `alpha.png`.
+
+
