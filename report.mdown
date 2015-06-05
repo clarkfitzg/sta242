@@ -40,6 +40,8 @@ time(seconds)   plot        program
 Plot a histogram of the single variable `total_amount` for values of 
 `total_amount` less than 100. Save the result to `histogram.pdf`.
 
+![This is Matplotlib's histogram](matplotlib/histogram.pdf)
+
 ### Task 2: Alpha shading 
 
 Scatter plot of two variables where the points are semi transparent. This
