@@ -6,10 +6,10 @@ timer = function(starttime, plottype, program)
 }
 
 # Usage demo:
-starttime = Sys.time()
+#starttime = Sys.time()
 
-timer(starttime, 'histogram', 'R')
-timer(starttime, 'histogram', 'ggplot2')
+#timer(starttime, 'histogram', 'R')
+#timer(starttime, 'histogram', 'ggplot2')
 
 # Then use it from the shell like this:
 # $ Rscript loadtaxi.R

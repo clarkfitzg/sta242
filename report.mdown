@@ -4,7 +4,7 @@
 
 Zhewen Hu and Clark Fitzgerald
 
-We visualize a sample of the taxi data set.
+We visualize a sample of the NYC taxi data set.
 
 ## Medium data EDA visualization shootout
 
@@ -12,8 +12,9 @@ Contenders:
 
 1. R - Good old vanilla R
 2. ggplot2 - popular R library
-2. Matplotlib - established Python plotting library
-2. Bokeh - newer Python library
+3. htmlwidgets - A line or two of R code is all it takes to produce a D3 graphic or Leaflet map
+4. Matplotlib - established Python plotting library
+5. Bokeh - newer Python library
 
 Evaluation criteria:
 
@@ -22,6 +23,7 @@ Evaluation criteria:
   needed?
 - __Code Readability__ How expressive is the code? Extensibility?
   maintainability? Learning curve?
+-__Presentation of the outputs__It is easy to show the output in different platforms?
 
 Timings - All plots should be created on one machine 
 (one of the dept servers) at a time when it's not loaded. Need to make
@@ -29,9 +31,9 @@ multiple timings.
 
 Save timing data to a CSV file:
 
-time(seconds)   plot        program        
-----            -------     ----        
-3.61            histogram   R
+program     task        time(seconds)
+-------     ----        ----
+R           histogram   3.61
 ...
 
 
