@@ -2,7 +2,7 @@
 # Pass in number of repetitions as a command line argument
 # Example usage to run with 5 reps:
 # 
-# ~/projects/sta242 $ Rscript allplots.R 5
+# ~/projects/sta242 $ Rscript allplots_ggplot2.R 5
 # 0.007927,plot_alpha,R
 # 0.000932,plot_alpha2,R
 # 0.000869,plot_boxplot,R
