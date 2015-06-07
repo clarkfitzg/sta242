@@ -51,12 +51,12 @@ where the points are semi transparent.
 This shows the distribution of many points without completely overplotting.
 
 Convert `trip_time_in_seconds` to minutes by dividing by 60.
-
-1. Save the result to `alpha.png`.
-2. Filter for rides less than 1 hour and total amount less than 100. 
-    Save the result to `alpha2.png`.
+Save the result to `alpha.png`.
 
 ![Matplotlib](matplotlib/alpha.png)
+
+Filter for rides less than 1 hour and total amount less than 100. 
+    Save the result to `alpha2.png`.
 
 ![Matplotlib](matplotlib/alpha2.png)
 
