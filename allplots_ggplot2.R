@@ -8,8 +8,9 @@
 # 0.000869,plot_boxplot,R
 # ... (More data)
 
+library(ggplot2)
 
-progname = 'R'
+progname = 'ggplot2'
 nreps = as.integer(commandArgs(TRUE))
 
 # No arguments => do it one time
@@ -21,26 +22,21 @@ source('runRplots.R')
 
 ############################################################
 # Plotting functions follow
+#
+# TODO- Zhewen- fill these function bodies 
+# with relevant dplyr / ggplot2 code
+# Note that you'll need to call print for each one
 ############################################################
 
 plot_sample = function()
 {
-    npoints = 300
-    x = taxi[, 'trip_time_in_secs'] / 60
-    y = taxi[, 'total_amount']
-
-    set.seed(37)
-    randompts = sample.int(length(x), size=npoints, replace=TRUE)
-
-    plot(x[randompts], y[randompts],
-         xlab = 'trip time in minutes', ylab = 'total fare amount in dollars')
+    p = qplot(1:10, 1:10)
+    print(p)
 }
 
 
 plot_histogram = function()
 {
-    x = taxi[, 'total_amount'][taxi[, 'total_amount'] <= 100]
-    hist(x)
 }
 
 
