@@ -13,7 +13,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-taxicsv = os.sep.join(('data', 'taxi.csv'))
+#taxicsv = os.sep.join(('data', 'taxi.csv'))
+taxicsv = os.sep.join(('data', 'smalltaxi.csv'))
 taxi = pd.read_csv(taxicsv)
 
 
@@ -40,7 +41,7 @@ def timer(plotfunc):
 
 
 def plot_sample():
-    npoints = 300
+    npoints = 200
     x = taxi['trip_time_in_secs'] / 60
     y = taxi['total_amount']
 
