@@ -62,6 +62,9 @@ Since timings are the most important result we present them here first.
 
 ![We observe ...](timingplots.png)
 
+![A scaled version](timingplots2.png)
+
+
 # Tasks
 
 ### Task 1: Histogram
