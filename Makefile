@@ -10,7 +10,10 @@ MPL_PLOTS = $(PLOTS:%=matplotlib/%.png)
 R_PLOTS = $(PLOTS:%=R/%.png)
 GG_PLOTS = $(PLOTS:%=ggplot2/%.png)
 
-# The main report as pdf
+# Print main report as pdf
+printed.pdf: printed.tex
+	pdflatex $<
+
 # $< references the first prerequisite
 #$(REPORT).pdf : $(REPORT).mdown $(MPL_PLOTS) timingplots.png
 #$(REPORT).pdf : $(REPORT).mdown timingplots.png
@@ -21,6 +24,11 @@ $(REPORT).pdf : $(REPORT).mdown $(MPL_PLOTS) $(R_PLOTS) $(GG_PLOTS)
 
 # The main report as html
 $(REPORT).html : $(REPORT).mdown
+	pandoc $< -s -o $@ \
+		-f markdown+simple_tables+footnotes
+
+# The main report as tex
+$(REPORT).tex : $(REPORT).mdown
 	pandoc $< -s -o $@ \
 		-f markdown+simple_tables+footnotes
 
