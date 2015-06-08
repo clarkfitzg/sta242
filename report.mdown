@@ -1,48 +1,75 @@
 # Stats 242 Project
 
-## EDA and visualization of medium data sets
+## Medium data EDA visualization benchmarks
 
 Zhewen Hu and Clark Fitzgerald
 
-We visualize a sample of the NYC taxi data set.
+### Abstract
 
-## Medium data EDA visualization shootout
+Which plotting libraries are fastest and most efficient for 
+exploratory analysis of medium sized data sets?
+In this report we compare several popular plotting libraries by performing
+basic exploratory data analysis (EDA) on a subset of the NYC taxi data set.
 
-Contenders: 
+### Data
 
-1. R - Good old vanilla R
-2. ggplot2 - popular R library
-3. htmlwidgets - A line or two of R code is all it takes to produce a D3 graphic or Leaflet map
-4. Matplotlib - established Python plotting library
-5. Bokeh - newer Python library
+The data consists of a sample of the 2013 NYC taxi data from Assignment 5.
+These are available at http://www.andresmh.com/nyctaxitrips/ and there is a
+description of the fields at http://publish.illinois.edu/dbwork/open-data/.
+Since we are interested in the performance of the libraries for working on
+data in memory 
+we wrote a program to randomly sample approximately 200 MB of the original 50 GB of data.
+This produced a CSV file containing 1.25 million rows and 21
+columns. Below is an example:
 
-Evaluation criteria:
+trip_time_in_secs   pickup_longitude    total_amount ...
+-----------------   ----------------    ------------ ---
+1685                -73.862839          38.3
+...
 
-- __Speed__ The primary focus. How long to make a single plot?
+### Libraries
+
+We considered the following open source libraries from R and Python:
+
+1. __R__ - Base R, using no extra packages
+2. __ggplot2__ - popular R library
+3. __htmlwidgets__ - A line or two of R code is all it takes to produce a D3 graphic or Leaflet map
+4. __Matplotlib__ - Established Python plotting library
+
+### Evaluation
+
+The following were the criteria for evaluation:
+
+- __Speed__ The primary focus. How long to make a single plot? 
 - __Aesthetics__ Do the defaults look reasonable or are additional tweaks
   needed?
 - __Code Readability__ How expressive is the code? Extensibility?
-  maintainability? Learning curve?
--__Presentation of the outputs__It is easy to show the output in different platforms?
+  Maintainability? Learning curve?
+- __Versatility__ Is it easy to show the output in different formats?
 
-Timings - All plots should be created on one machine 
-(one of the dept servers) at a time when it's not loaded. Need to make
-multiple timings. 
+### Reproducibility
 
-Save timing data to a CSV file:
+We've taken care to make sure that this analysis can be reproduced. Our
+principal tool for this is GNU make.
+The scripts are written in such a way that they time only the desired
+steps. This excludes the time required to load in the data from disk.
+The timings were done serially on a department server that typically has a
+light load.
 
-program     task        time(seconds)
--------     ----        ----
-R           histogram   3.61
-...
+### Timings
 
+Since timings are the most important result we present them here first.
+
+![We observe ...](timingplots.png)
+
+# Tasks
 
 ### Task 1: Histogram
 
 Plot a histogram of the single variable `total_amount` for values of 
 `total_amount` less than 100. Save the result to `histogram.png`.
 
-![The defaults are not so wonderful](matplotlib/histogram.png)
+![Matplotlib](matplotlib/histogram.png)
 
 ### Task 2: Alpha shading 
 
