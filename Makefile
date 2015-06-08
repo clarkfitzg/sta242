@@ -1,7 +1,7 @@
 # Name of the report
 REPORT = report
 
-N_TIMINGS = 2
+N_TIMINGS = 5
 
 # All the plot files
 PLOTS = alpha alpha2 boxplot histogram sample
@@ -10,7 +10,8 @@ MPL_PLOTS = $(PLOTS:%=matplotlib/%.png)
 
 # The main report as pdf
 # $< references the first prerequisite
-$(REPORT).pdf : $(REPORT).mdown $(MPL_PLOTS)
+#$(REPORT).pdf : $(REPORT).mdown $(MPL_PLOTS) timingplots.png
+$(REPORT).pdf : $(REPORT).mdown timingplots.png
 	pandoc $< -s -o $@ \
 		-V geometry:margin=1in -V fontsize=12pt \
 		-f markdown+simple_tables+footnotes

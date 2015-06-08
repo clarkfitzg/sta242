@@ -17,8 +17,8 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 
-#taxicsv = os.sep.join(('data', 'taxi.csv'))
-taxicsv = os.sep.join(('data', 'smalltaxi.csv'))
+taxicsv = os.sep.join(('data', 'taxi.csv'))
+#taxicsv = os.sep.join(('data', 'smalltaxi.csv'))
 taxi = pd.read_csv(taxicsv)
 
 

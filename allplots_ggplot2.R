@@ -32,6 +32,7 @@ source('runRplots.R')
 plot_sample = function()
 {
   taxi$minutes = taxi$'trip_time_in_secs'/60
+    set.seed(37)
   sampling = sample_n(taxi, 200, replace = FALSE)
   p = ggplot(sampling, aes(x = total_amount, y = minutes)) +
     geom_point(colour = "blue", alpha = 0.3)

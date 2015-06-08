@@ -1,8 +1,8 @@
 # Helper script to be used in both ggplot2 and R timings 
 
 # Do it with a small data set while developing code
-taxi = read.csv('data/smalltaxi.csv')
-#taxi = read.csv('data/taxi.csv')
+#taxi = read.csv('data/smalltaxi.csv')
+taxi = read.csv('data/taxi.csv')
 
 
 timer = function(plotfuncname, progname)

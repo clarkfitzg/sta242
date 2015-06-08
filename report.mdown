@@ -70,6 +70,8 @@ Plot a histogram of the single variable `total_amount` for values of
 `total_amount` less than 100. Save the result to `histogram.png`.
 
 ![Matplotlib](matplotlib/histogram.png)
+![R](R/histogram.png)
+![ggplot2](ggplot2/histogram.png)
 
 ### Task 2: Alpha shading 
 
@@ -81,11 +83,15 @@ Convert `trip_time_in_seconds` to minutes by dividing by 60.
 Save the result to `alpha.png`.
 
 ![Matplotlib](matplotlib/alpha.png)
+![R](R/alpha.png)
+![ggplot2](ggplot2/alpha.png)
 
 Filter for rides less than 1 hour and total amount less than 100. 
     Save the result to `alpha2.png`.
 
 ![Matplotlib](matplotlib/alpha2.png)
+![R](R/alpha2.png)
+![ggplot2](ggplot2/alpha2.png)
 
 ### Task 3: Sampling
 
@@ -94,6 +100,8 @@ all points choose a random sample without replacement of 300 points.
 Save result to `sample.png`.
 
 ![Matplotlib](matplotlib/sample.png)
+![R](R/sample.png)
+![ggplot2](ggplot2/sample.png)
 
 ### Task 4: Boxplots
 
@@ -102,6 +110,8 @@ is less than 100.
 Save result to `boxplot.png`.
 
 ![Matplotlib](matplotlib/boxplot.png)
+![R](R/boxplot.png)
+![ggplot2](ggplot2/boxplot.png)
 
 ####Spatial Visualization
 For this part, we test the performance of ggmap by visualizing the pick-up longitude and latitude and drop-off latitude. The task is to see that if ggmap works well in expressing data information.
