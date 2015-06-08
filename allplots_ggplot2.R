@@ -31,8 +31,9 @@ source('runRplots.R')
 
 plot_sample = function()
 {
-  sampling = sample_n(alphadata, 300, replace = FALSE)
-  p = ggplot(sampling, aes(x = totalamount, y = triptime)) +
+  taxi$minutes = taxi$'trip_time_in_secs'/60
+  sampling = sample_n(taxi, 200, replace = FALSE)
+  p = ggplot(sampling, aes(x = total_amount, y = minutes)) +
     geom_point(colour = "blue", alpha = 0.3)
   print(p)
 }
@@ -70,7 +71,7 @@ plot_alpha2 = function()
   triptime = as.numeric(taxi$'trip_time_in_secs')/60
   totalamount = as.numeric(taxi$'total_amount')
   alphadata = as.data.frame(cbind(triptime, totalamount))
-  filteralpha = filter(x, triptime < 60 & totalamount < 100)
+  filteralpha = filter(alphadata, triptime <= 60 & totalamount <= 100)
   p = ggplot(filteralpha, aes(x = triptime, y = totalamount)) +
     geom_point(colour = "blue", alpha = 0.05)
   print(p)

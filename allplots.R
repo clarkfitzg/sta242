@@ -8,6 +8,7 @@
 # 0.000869,plot_boxplot,R
 # ... (More data)
 
+library(scales)
 
 progname = 'R'
 nreps = as.integer(commandArgs(TRUE))
@@ -53,6 +54,22 @@ plot_boxplot = function()
 }
 
 
+plot_alpha = function()
+{
+    # Uses the built in scales package
+    minutes = taxi$trip_time_in_secs / 60
+    plot(minutes, taxi$total_amount,
+         col=scales::alpha('black', 0.05))
+}
+
+
+plot_alpha2 = function()
+{
+    minutes = taxi$trip_time_in_secs / 60
+    ss = minutes <= 60 & taxi$total_amount <= 100
+    plot(minutes[ss], taxi$total_amount[ss],
+         col=scales::alpha('black', 0.05))
+}
 
 
 ############################################################
