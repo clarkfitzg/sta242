@@ -33,7 +33,7 @@ We considered the following open source libraries from R and Python:
 
 1. __R__ - Base R, using no extra packages
 2. __ggplot2__ - popular R library
-3. __htmlwidgets__ - A line or two of R code is all it takes to produce a D3 graphic or Leaflet map
+3. __ggmap__ - R library for spatial visualization
 4. __Matplotlib__ - Established Python plotting library
 
 ### Evaluation
@@ -102,3 +102,8 @@ is less than 100.
 Save result to `boxplot.png`.
 
 ![Matplotlib](matplotlib/boxplot.png)
+
+####Spatial Visualization
+For this part, we test the performance of ggmap by visualizing the pick-up longitude and latitude and drop-off latitude. The task is to see that if ggmap works well in expressing data information.
+
+If we get the map source from Google, it is not easy to adjust the range of the map. Because Gmap source has its own default for the map. So it is more flexible to source from stamen map library. 
