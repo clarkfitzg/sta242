@@ -12,6 +12,7 @@
 progname = 'R'
 nreps = as.integer(commandArgs(TRUE))
 
+
 # No arguments => do it one time
 if (length(nreps) == 0){
     nreps = 1
@@ -46,17 +47,13 @@ plot_histogram = function()
 
 plot_boxplot = function()
 {
+  x = taxi[, c('payment_type','total_amount')][taxi[, 'total_amount'] <= 100,]
+  boxplot(total_amount ~ payment_type,data = x, main="Boxplot for Total Amount", 
+          xlab="Payment Type", ylab="Total Amount")
 }
 
 
-plot_alpha = function()
-{
-}
 
-
-plot_alpha2 = function()
-{
-}
 
 ############################################################
 
