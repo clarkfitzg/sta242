@@ -2,7 +2,7 @@
 # Pass in number of repetitions as a command line argument
 # Example usage to run with 5 reps:
 # 
-# ~/projects/sta242 $ Rscript allplots_ggplot2.R 5
+# ~/projects/sta242 $ Rscript allplots_ggmap.R 5
 # 0.007927,plot_alpha,R
 # 0.000932,plot_alpha2,R
 # 0.000869,plot_boxplot,R
@@ -26,7 +26,7 @@ source('runRplots.R')
 # Plotting functions follow
 #
 # TODO- Zhewen- fill these function bodies 
-# with relevant dplyr / ggplot2 code
+# with relevant dplyr / ggmap code
 # Note that you'll need to call print for each one
 ############################################################
 

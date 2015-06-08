@@ -42,7 +42,7 @@ plot_sample = function()
 plot_histogram = function()
 {
     x = taxi[, 'total_amount'][taxi[, 'total_amount'] <= 100]
-    hist(x)
+    hist(x, xlabs = "Total Amount")
 }
 
 
