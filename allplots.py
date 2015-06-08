@@ -10,6 +10,10 @@ from functools import partial
 
 import numpy as np
 import pandas as pd
+import matplotlib
+
+# Necessary to run on server without X11
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 
