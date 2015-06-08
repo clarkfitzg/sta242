@@ -31,19 +31,13 @@ source('runRplots.R')
 
 plot_sample = function()
 {
-<<<<<<< HEAD
+
   triptime = as.numeric(taxi$'trip_time_in_secs')/60
   totalamount = as.numeric(taxi$'total_amount')
   alphadata = as.data.frame(cbind(triptime, totalamount))
-  sampling = sample_n(alphadata, 30, replace = FALSE)
+  sampling = sample_n(alphadata, 300, replace = FALSE)
   p = ggplot(sampling, aes(x = totalamount, y = triptime)) +
-=======
-  taxi$minutes = taxi$'trip_time_in_secs'/60
-    set.seed(37)
-  sampling = sample_n(taxi, 200, replace = FALSE)
-  p = ggplot(sampling, aes(x = total_amount, y = minutes)) +
->>>>>>> 4ad1ff5760bc8bef89d4ed9661e7c18aeb3d8839
-    geom_point(colour = "blue", alpha = 0.3)
+    geom_point(colour = "blue", alpha = 0.05)
   print(p)
 }
 
@@ -80,11 +74,7 @@ plot_alpha2 = function()
   triptime = as.numeric(taxi$'trip_time_in_secs')/60
   totalamount = as.numeric(taxi$'total_amount')
   alphadata = as.data.frame(cbind(triptime, totalamount))
-<<<<<<< HEAD
   filteralpha = filter(alphadata, triptime < 60 & totalamount < 100)
-=======
-  filteralpha = filter(alphadata, triptime <= 60 & totalamount <= 100)
->>>>>>> 4ad1ff5760bc8bef89d4ed9661e7c18aeb3d8839
   p = ggplot(filteralpha, aes(x = triptime, y = totalamount)) +
     geom_point(colour = "blue", alpha = 0.05)
   print(p)
