@@ -9,79 +9,100 @@
 </head>
 <body>
 <h1 id="stats-242-project">Stats 242 Project</h1>
-<h2 id="eda-and-visualization-of-medium-data-sets">EDA and visualization of medium data sets</h2>
+<h2 id="medium-data-eda-visualization-benchmarks">Medium data EDA visualization benchmarks</h2>
+<p>8 June 2015</p>
 <p>Zhewen Hu and Clark Fitzgerald</p>
-<p>We visualize a sample of the NYC taxi data set.</p>
-<h2 id="medium-data-eda-visualization-shootout">Medium data EDA visualization shootout</h2>
-<p>Contenders:</p>
-<ol style="list-style-type: decimal">
-<li>R - Good old vanilla R</li>
-<li>ggplot2 - popular R library</li>
-<li>htmlwidgets - A line or two of R code is all it takes to produce a D3 graphic or Leaflet map</li>
-<li>Matplotlib - established Python plotting library</li>
-<li>Bokeh - newer Python library</li>
-</ol>
-<p>Evaluation criteria:</p>
-<ul>
-<li><strong>Speed</strong> The primary focus. How long to make a single plot?</li>
-<li><strong>Aesthetics</strong> Do the defaults look reasonable or are additional tweaks needed?</li>
-<li><strong>Code Readability</strong> How expressive is the code? Extensibility? maintainability? Learning curve? -__Presentation of the outputs__It is easy to show the output in different platforms?</li>
-</ul>
-<p>Timings - All plots should be created on one machine (one of the dept servers) at a time when it's not loaded. Need to make multiple timings.</p>
-<p>Save timing data to a CSV file:</p>
+<h3 id="abstract">Abstract</h3>
+<p>Which plotting libraries are fastest and most efficient for exploratory analysis of medium sized data sets? In this report we compare several popular plotting libraries by performing basic exploratory data analysis (EDA) on a subset of the NYC taxi data set. Additionally we plot informative maps about pickup and dropoff locations.</p>
+<h3 id="data">Data</h3>
+<p>The data consists of a sample of the 2013 NYC taxi data from Assignment 5. These are available at http://www.andresmh.com/nyctaxitrips/ and there is a description of the fields at http://publish.illinois.edu/dbwork/open-data/. Since we are interested in the performance of the libraries for working on data in memory we wrote a program to randomly sample approximately 200 MB of the original 50 GB of data. This produced a CSV file containing 1.25 million rows and 21 columns. Below is an example:</p>
 <table>
 <thead>
 <tr class="header">
-<th align="left">program</th>
-<th align="left">task</th>
-<th align="left">time(seconds)</th>
+<th align="left">trip_time_in_secs</th>
+<th align="left">pickup_longitude</th>
+<th align="left">total_amount</th>
+<th align="left">...</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">R</td>
-<td align="left">histogram</td>
-<td align="left">3.61</td>
+<td align="left">1685</td>
+<td align="left">-73.862839</td>
+<td align="left">38.3</td>
+<td align="left"></td>
 </tr>
 <tr class="even">
 <td align="left">...</td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left"></td>
 </tr>
 </tbody>
 </table>
-<h3 id="task-1-histogram">Task 1: Histogram</h3>
-<p>Plot a histogram of the single variable <code>total_amount</code> for values of <code>total_amount</code> less than 100. Save the result to <code>histogram.png</code>.</p>
-<div class="figure">
-<img src="matplotlib/histogram.png" alt="The defaults are not so wonderful" />
-<p class="caption">The defaults are not so wonderful</p>
-</div>
-<h3 id="task-2-alpha-shading">Task 2: Alpha shading</h3>
-<p>Scatter plot of two variables: trip time in minutes and <code>total_amount</code> where the points are semi transparent. This shows the distribution of many points without completely overplotting.</p>
-<p>Convert <code>trip_time_in_seconds</code> to minutes by dividing by 60.</p>
+<h3 id="libraries">Libraries</h3>
+<p>We compared the following open source libraries from R and Python:</p>
 <ol style="list-style-type: decimal">
-<li>Save the result to <code>alpha.png</code>.</li>
-<li>Filter for rides less than 1 hour and total amount less than 100. Save the result to <code>alpha2.png</code>.</li>
+<li><strong>R</strong> - Base R, using no extra packages</li>
+<li><strong>ggplot2</strong> - popular R library</li>
+<li><strong>Matplotlib</strong> - Established Python plotting library</li>
 </ol>
+<h2 id="evaluation">Evaluation</h2>
+<h3 id="speed">Speed</h3>
+<p>Speed was the primary focus. How long to make a single plot?</p>
+<p>In general we saw Matplotlib was fastest with R not far behind. ggplot was typically slower than R, but this is understandable because it's putting more features on the plots.</p>
+<h3 id="aesthetics">Aesthetics</h3>
+<p>Do the defaults look reasonable or are additional tweaks needed?</p>
+<p>R does a nice job using clean, simple defaults. ggplot2 has the most aesthetically pleasant defaults, but the font is a little small. Matplotlib makes it easy to change the defaults through the use of style sheets. A nitpick here is the need to always call <code>tight_layout</code> so that the labels are not cut off on the saved plot.</p>
+<h3 id="code-readability">Code Readability</h3>
+<p>How expressive is the code? Extensibility? Maintainability? Learning curve?</p>
+<p>R and Matplotlib actually feel closer together than R and ggplot2. ggplot2 uses Wilkinson's <em>grammar of graphics</em> and requires data to always be in a data frame. R's formula notation is handy for plots such as the boxplot. Each library uses amount the same number of lines of code to do the basic plots presented here.</p>
+<h3 id="reproducibility">Reproducibility</h3>
+<p>We've taken care to make sure that this analysis can be reproduced. Our principal tool for this is GNU make. pandoc makes for easy conversion between formats. The scripts are written in such a way that they time only the desired steps. This excludes the time required to load in the data from disk. The timings were done serially on a 2010 Macbook with no other programs running.</p>
 <div class="figure">
-<img src="matplotlib/alpha.png" alt="Matplotlib" />
-<p class="caption">Matplotlib</p>
+<img src="timingplots.png" alt="The timings for each program" />
+<p class="caption">The timings for each program</p>
 </div>
 <div class="figure">
-<img src="matplotlib/alpha2.png" alt="Matplotlib" />
-<p class="caption">Matplotlib</p>
+<img src="timingplots2.png" alt="The timings for each program scaled within plot type" />
+<p class="caption">The timings for each program scaled within plot type</p>
 </div>
+<h1 id="tasks">Tasks</h1>
+<h3 id="task-1-histogram">Task 1: Histogram</h3>
+<p>Plot a histogram of the single variable <code>total_amount</code> for values of <code>total_amount</code> less than 100.</p>
+<p>In this plot we see the greatest difference in speed. R is fastest at about 0.4 seconds. Matplotlib is right behind at 0.45 seconds. ggplot2 is significantly slower at about 3.5-4 seconds. These fast times makes this a good choice of plot for EDA of large data sets.</p>
+<p>Regarding aesthetics, R adds nice default labels.</p>
+<p><img src="matplotlib/histogram.png" alt="Matplotlib" /> <img src="R/histogram.png" alt="R" /> <img src="ggplot2/histogram.png" alt="ggplot2" /></p>
+<h3 id="task-2-alpha-shading">Task 2: Alpha shading</h3>
+<p>Scatter plot of two variables: trip time in minutes and <code>total_amount</code> where the points are semi transparent. This shows the distribution of many points without completely overplotting. For this timing we also convert <code>trip_time_in_seconds</code> to minutes by dividing by 60.</p>
+<p>These plots revealed horizontal strata in the data where the total amount corresponds to total fares between 50 and 70 dollars.</p>
+<p>For these plots Matplotlib is much faster. It takes around 5 seconds to plot 1 million alpha shaded points, while R took around 35 seconds and ggplot was around 55 seconds.</p>
+<p>Aesthetically R and ggplot2 make a nicer default choice of axis ranges, since Matplotlib leaves an excessive amount of blank space.</p>
+<p><img src="matplotlib/alpha.png" alt="Matplotlib" /> <img src="R/alpha.png" alt="R" /> <img src="ggplot2/alpha.png" alt="ggplot2" /></p>
+<p>We added an additional step to filter for rides less than 1 hour and total amount less than 100.</p>
+<p><img src="matplotlib/alpha2.png" alt="Matplotlib" /> <img src="R/alpha2.png" alt="R" /> <img src="ggplot2/alpha2.png" alt="ggplot2" /></p>
 <h3 id="task-3-sampling">Task 3: Sampling</h3>
-<p>Perform the same scatter plot as the alpha shading, but instead of plotting all points choose a random sample without replacement of 300 points. Save result to <code>sample.png</code>.</p>
-<div class="figure">
-<img src="matplotlib/sample.png" alt="Matplotlib" />
-<p class="caption">Matplotlib</p>
-</div>
+<p>Perform the same scatter plot as the alpha shading, but instead of plotting all points choose a random sample without replacement of 200 points.</p>
+<p>This is one of the most informative plots. It demonstrates the increase in total fare as the ride gets longer. It's also one of the computationally cheapest plots. Matplotlib is much slower. We speculate that this is because there is less overhead to create and save a single plot in R.</p>
+<p>We feel Matplotlib has nice defaults here regarding choice of scale and visibility of points.</p>
+<p><img src="matplotlib/sample.png" alt="Matplotlib" /> <img src="R/sample.png" alt="R" /> <img src="ggplot2/sample.png" alt="ggplot2" /></p>
 <h3 id="task-4-boxplots">Task 4: Boxplots</h3>
-<p>Boxplots of <code>total_amount</code> grouped by <code>payment_type</code> where <code>total_amount</code> is less than 100. Save result to <code>boxplot.png</code>.</p>
+<p>Boxplots of <code>total_amount</code> grouped by <code>payment_type</code> where <code>total_amount</code> is less than 100. The long tails here suggest that the distribution of the data is quite skewed.</p>
+<p>Matplotlib was fastest here at 1.8 seconds. R was slower at 4.8 seconds and ggplot2 was around 10.</p>
+<p>Using the default pandas method in Matplotlib writes overlapping text for the title, which is not good.</p>
+<p><img src="matplotlib/boxplot.png" alt="Matplotlib" /> <img src="R/boxplot.png" alt="R" /> <img src="ggplot2/boxplot.png" alt="ggplot2" /></p>
+<h2 id="spatial-visualization">Spatial Visualization</h2>
+<p>For this part, we test the performance of ggmap by visualizing the pick-up longitude and latitude and drop-off latitude. The task is to see that if ggmap works well in expressing data information.</p>
+<p>If we get the map source from Google, it is not easy to adjust the range of the map. Because Gmap source has its own default for the map. So it is more flexible to source from stamen map library. We can see ggmap does a good job in visualing the data points on the map. Also, it is clear to see that taxi service is busier in Manhattan area than Brooklyn. (The map plots are at the end of the report.)</p>
 <div class="figure">
-<img src="matplotlib/boxplot.png" alt="Matplotlib" />
-<p class="caption">Matplotlib</p>
+<img src="R/pickup.png" alt="Source is Google Maps" />
+<p class="caption">Source is Google Maps</p>
 </div>
+<div class="figure">
+<img src="R/dropoff.png" alt="Source is stamen map library" />
+<p class="caption">Source is stamen map library</p>
+</div>
+<h2 id="conclusion">Conclusion</h2>
+<p>All programs tested are fully capable of doing exploratory data analysis of millions of data points on a local laptop. Matplotlib is generally faster, but not always. ggplot2 is slower than R, but has more beautiful defaults and allows rapid creation of more complicated data analysis graphics. R is quick to learn and provides nice defaults. ggmap works pretty good in visualizing data. But do make sure the longitude and latitude data is correct.</p>
 </body>
 </html>
