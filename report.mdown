@@ -46,7 +46,7 @@ Speed was the primary focus. How long to make a single plot?
 
 In general we saw Matplotlib was fastest with R not far behind. ggplot was
 typically slower than R, but this is understandable because it's putting
-more features on the plot.
+more features on the plots.
 
 ### Aesthetics 
 
@@ -111,7 +111,7 @@ This shows the distribution of many points without completely overplotting.
 For this timing we also convert `trip_time_in_seconds` to minutes by dividing by 60.
 
 These plots revealed horizontal strata in the data where the total amount
-corresponds to total fares between 50 and 70.
+corresponds to total fares between 50 and 70 dollars.
 
 For these plots Matplotlib is much faster. It takes around 5 seconds to
 plot 1 million alpha shaded points, while R took around 35 seconds and
@@ -170,6 +170,8 @@ the title, which is not good.
 For this part, we test the performance of ggmap by visualizing the pick-up longitude and latitude and drop-off latitude. The task is to see that if ggmap works well in expressing data information.
 
 If we get the map source from Google, it is not easy to adjust the range of the map. Because Gmap source has its own default for the map. So it is more flexible to source from stamen map library. 
+We can see ggmap does a good job in visualing the data points on the map. Also, it is clear to see that taxi service is busier in Manhattan area than Brooklyn.
+(The map plots are at the end of the report.)
 
 ![Source is Google Maps](R/pickup.png)
 
@@ -183,3 +185,4 @@ Matplotlib is generally faster, but not always.
 ggplot2 is slower than R, but has more beautiful defaults and allows rapid
 creation of more complicated data analysis graphics.
 R is quick to learn and provides nice defaults.
+ggmap works pretty good in visualizing data. But do make sure the longitude and latitude data is correct. 
